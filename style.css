@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    border: 0;
+    text-align: center;
+  }
+  
+  body {
+    background-color: #fff4c0;
+  }
+  
+  h1 {
+    background-color: #ffd100;
+    color: #202020;
+    height: 4rem;
+    line-height: 4rem;
+  }
+  
+  .choices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  
+  .choice:hover {
+    border: 5px solid orange;
+  }
+  
+  .choice {
+    border: 5px solid #202020;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #rock {
+    background-image: url(rock.png);
+    background-size: cover;
+  }
+  
+  #paper {
+    background-image: url(paper.png);
+    background-size: cover;
+  }
+  
+  #scissors {
+    background-image: url(scissors.png);
+    background-size: cover;
+  }
+  
+  .score-board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #202020;
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    gap: 5rem;
+  }
+  
+  #user-score,
+  #comp-score {
+    font-size: 3rem;
+  }
+  
+  .msg-container {
+    margin-top: 3rem;
+    color: #202020;
+    cursor: pointer;
+  }
+  
+  #msg {
+    background-color: #ffd100;
+    color: #202020;
+    font-size: 1rem;
+    display: inline;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
