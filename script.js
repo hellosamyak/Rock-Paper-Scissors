@@ -20,7 +20,7 @@ const gameDrawn = () => {
     msg.style.color = "#202020";
 };
 
-const showWinner = (userWin, userChoice, compChoice) => {
+const showWinner = (userWin, _userChoice, compChoice) => {
     if (userWin) {
         userScore++;
         userScoreCount.innerText = userScore;
