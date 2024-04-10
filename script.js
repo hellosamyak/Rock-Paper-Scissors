@@ -1,5 +1,6 @@
 let userScore = 0;
 let compScore = 0;
+let userChoice;
 
 const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
@@ -13,14 +14,8 @@ const gnrtCompChoice = () => { //Generating choice of the computer.
     return options[randomIdx];
 };
 
-const gameDrawn = () => {
-    console.log("game was drawn.")
-    msg.innerText = `Game drawn! You both chose ${userChoice}.`
-    msg.style.backgroundColor = "#ffd100";
-    msg.style.color = "#202020";
-};
 
-const showWinner = (userWin, _userChoice, compChoice) => {
+const showWinner = (userWin, userChoice, compChoice) => {
     if (userWin) {
         userScore++;
         userScoreCount.innerText = userScore;
@@ -40,9 +35,14 @@ const playGame = (userChoice) => {
     console.log("user choice = ", userChoice);
     const compChoice = gnrtCompChoice();
     console.log("comp choice =", compChoice);
-
+    const gameDrawn = () => {
+        console.log("game was drawn.")
+        msg.innerText = `Game drawn! You both chose ${userChoice}.`
+        msg.style.backgroundColor = "#ffd100";
+        msg.style.color = "#202020";
+    };
     if (userChoice === compChoice) {
-        gameDrawn();
+        gameDrawn(userChoice); // Pass userChoice to gameDrawn
     } else {
         let userWin = true;
         if(userChoice === "rock") { //paper or scissors
@@ -52,7 +52,7 @@ const playGame = (userChoice) => {
         } else { //rock or scissors
             userWin = compChoice === "rock" ? false : true;
         };
-        showWinner(userWin, userChoice, compChoice);
+        showWinner(userWin, userChoice, compChoice); // Pass userWin instead of userChoice
     }
 };
 
